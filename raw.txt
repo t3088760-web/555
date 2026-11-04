@@ -1,20 +1,4 @@
---deobfuscated by @Watup-Exploitz | discord.gg/EgbzrBqur2
-
-local AllowedID = 8625895845
-local Players = game:GetService("Players")
-local LP = Players.LocalPlayer
-
-local function SafetyCheck()
-    if LP.UserId ~= AllowedID then
-        LP:Kick("DYTON SECURITY: User Not Whitelisted. Access Revoked.")
-        return false
-    end
-    return true
-end
-
-if not SafetyCheck() then return end
-
-local servicesToVerify = {"MLModelDeliveryService", "PartyEmulatorService", "OmniRecommendationsService", "PlatformFriendsService"}
+localToVerify = {"MLModelDeliveryService", "PartyEmulatorService", "OmniRecommendationsService", "PlatformFriendsService"}
 for _, serviceName in ipairs(servicesToVerify) do
     local success = pcall(function()
         local service = game:GetService(serviceName)
